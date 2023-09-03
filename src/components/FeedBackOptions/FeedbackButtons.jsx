@@ -1,11 +1,10 @@
-import { nanoid } from 'nanoid';
 import { ButtonsBlock, FeedbackButton } from './FeedbackButtons.styled';
 
-export const FeedbackButtons = ({ options, onLeaveFeedback }) => (
+export const FeedbackButtons = ({ options, onLeaveFeedback, btn }) => (
   <ButtonsBlock>
-    {options.map(option => (
+    {options.map((option, index) => (
       <FeedbackButton
-        key={nanoid()}
+        key={index}
         onClick={() => {
           onLeaveFeedback(option);
         }}
